@@ -16,8 +16,8 @@ public class LinearSearch{
     public static void main(String[] args){
         int[] elements = {10,58,45,30,36,85,74,143,100,111};
         //fetching input element from program arguments
-        int noToSearch = Integer.parseInt(args[0]);
-        int elementPosition = linearSearch(elements, noToSearch);
+        int elementToSearch = Integer.parseInt(args[0]);
+        int elementPosition = linearSearch(elements, elementToSearch);
         System.out.println("Element present at position: "+elementPosition);
     }
 }
