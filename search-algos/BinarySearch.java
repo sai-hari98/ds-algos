@@ -2,7 +2,10 @@ public class BinarySearch {
 
     //Binary search applies only for sorted list/array
     public static int binarySearch(int[] elements, int elementToSearch, int start, int end){
-        int middlePosition = (start+end)/2;
+        //int middlePosition = (start+end)/2;
+        //above will fail when sum of start and end is > than possible int value 2^32-1.
+        //Hence going with below logic -> decrease and conquer (algo paradigm)
+        int middlePosition = start + (end-start)/2;
         if(start > end)
             return -1;
 
@@ -15,12 +18,13 @@ public class BinarySearch {
         }
     }
 
+    //iterative approach to eliminate recursion
     public static int binarySearchIterative(int[] elements, int elementToSearch){
         int start = 0;
         int end = elements.length - 1;
 
         while(start<=end){
-            int middle = (start+end)/2;
+            int middle = start + (end-start)/2;
             if(elements[middle] == elementToSearch)
                 return middle+1;
 
