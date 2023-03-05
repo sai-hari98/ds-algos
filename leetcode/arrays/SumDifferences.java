@@ -30,6 +30,11 @@ public class SumDifferences {
         for(int i=0;i<nums.length;i++)
             total+=nums[i];
         int leftTotal = 0;
+        /**
+         * Using the total and the left values passed through to find the left and the right sum.
+         * After passing through an index, the value in it is not required anymore just the sum is needed.
+         * So, the same array nums is used to optimize the space to O(1)
+         */
         for(int i=0;i<nums.length;i++){
             int temp = nums[i];
             int rightTotal = total-temp-leftTotal;
