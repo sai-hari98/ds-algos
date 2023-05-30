@@ -43,4 +43,12 @@ public class FindMajorityElement {
         }
         return majority;
     }
+
+    /**
+     * We can also try the hashmap approach, where we can store the count of each element and then retrieve the key with max count
+     * But the runtime of such algorithm will not be linear.
+     *
+     * On an overall, if its guaranteed that the occurances will be more than n/2, moore's algo is fine.
+     * But if the occurances will be exactly n/2 or lesser, then we have to go with hashmap approach or arrays sort approach, whichever suits
+     */
 }
