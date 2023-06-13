@@ -1,5 +1,13 @@
 package arrays;
 
+/**
+ * You are given an array prices where prices[i] is the price of a given stock on the ith day.
+ *
+ * You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
+ *
+ * Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
+ * Link: https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description
+ */
 public class BuyStocks {
 
     public static void main(String[] args) {
@@ -16,7 +24,7 @@ public class BuyStocks {
         return maxSum;
     }
 
-    /* Own Approach */
+    /* Own Approach - winner. Least time taken (3ms) */
     public int maxProfitMyApproach(int[] prices) {
         int profitMax = 0, max = -1;
         for(int j=prices.length-1;j>0;j--){
