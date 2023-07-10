@@ -1,5 +1,8 @@
 package strings;
 
+/**
+ * Link: https://leetcode.com/problems/merge-strings-alternately
+ */
 public class MergeAltStrings {
 
     public static void main(String[] args) {
