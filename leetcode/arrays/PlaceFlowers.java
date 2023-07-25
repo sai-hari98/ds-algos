@@ -6,7 +6,7 @@ package arrays;
 public class PlaceFlowers {
 
     public static void main(String[] args) {
-            canPlaceFlowers(new int[]{1,0,0,0,0,1}, 2);
+        canPlaceFlowers(new int[]{1,0,0,0,0,1}, 2);
     }
 
     /* Used greedy approach here */
