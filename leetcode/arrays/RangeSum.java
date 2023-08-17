@@ -18,14 +18,19 @@ public class RangeSum {
 
         public NumArray(int[] nums) {
             this.nums = nums;
-            int sum = 0;
             for(int i = 0;i<nums.length;i++){
-                sum+=nums[i];
-                nums[i] = sum;
+                nums[i]+= nums[i-1];
             }
         }
 
+        /* Time complexity will be O(1) - because all the sum is calculated when its initialized.
+         */
         public int sumRange(int left, int right) {
+            /*
+            if condition stmt is slower than ternary operator.
+             */
+            /*if(left == 0)
+                return nums[right];*/
             int lsum = left-1 < 0 ? 0 : nums[left-1];
             return nums[right]-lsum;
         }
