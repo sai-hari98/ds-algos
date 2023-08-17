@@ -6,8 +6,24 @@ package arrays;
 public class RotateArray {
 
     public static void main(String[] args) {
-        rotateCopyArr(new int[]{1,2,3,4,5,6,7}, 3);
-        rotateReverseMethod(new int[]{1,2,3,4,5,6,7}, 3);
+        /*rotateCopyArr(new int[]{1,2,3,4,5,6,7}, 3);
+        rotateReverseMethod(new int[]{1,2,3,4,5,6,7}, 3);*/
+        rotateCyclic(new int[]{-1,-100,3,99}, 2);
+    }
+
+    public static void rotateCyclic(int[] nums, int k) {
+        k%=nums.length;
+        int swaps = 0;
+        for(int i = 0 ; i<k && swaps < nums.length; i++){
+            int prevNum = nums[i], j = i+k;
+            do{
+                int temp = nums[j];
+                nums[j] = prevNum;
+                prevNum = temp;
+                swaps++;
+                j = (j+k)%nums.length;
+            }while(j != (i+k));
+        }
     }
 
     /*
