@@ -36,6 +36,8 @@ public class ValidSudoku {
         }
         for(int i = 0 ; i< 9; i++){
             for(int j = 0 ; j < 9 ; j++){
+                if(board[i][j] == ".")
+                    continue;
                 if(rowEntries[i].containsKey(board[i][j]))
                     return false;
                 if(colEntries[j].containsKey(board[i][j]))
@@ -43,12 +45,9 @@ public class ValidSudoku {
                 int gridIndex = (i/3)*3+(j/3);
                 if(boxEntries[gridIndex].containsKey(board[i][j]))
                     return false;
-
-                if(board[i][j] != "."){
-                    rowEntries[i].put(board[i][j],1);
-                    colEntries[j].put(board[i][j],1);
-                    boxEntries[gridIndex].put(board[i][j],1);
-                }
+                rowEntries[i].put(board[i][j],1);
+                colEntries[j].put(board[i][j],1);
+                boxEntries[gridIndex].put(board[i][j],1);
             }
         }
         return true;
